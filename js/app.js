@@ -6,7 +6,8 @@ var Enemy = function() {
     this.speed = 40;
     this.x = 0;
     this.y = 230 * Math.random();
-    this.bugPlacement = [60, 130, 210];
+    this.isPlacement = [60, 120, 210];
+    this.allEnemies = 10;
     
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
@@ -26,7 +27,7 @@ Enemy.prototype.update = function(dt) {
 
     if (this.x > 500) {
         this.x = -125;
-        this.y = this.bugPlacement[Math.round(Math.random() * this.bugPlacement.length)];;
+        this.y = this.isPlacement[Math.floor(Math.random() * this.isPlacement.length)];;
         }
     this.left = this.x;
     this.top = this.y;
@@ -36,7 +37,7 @@ Enemy.prototype.update = function(dt) {
     this.checkCollisions(this, player);
 }
 
-Enemy.prototype.collision = function(enemy, player) {
+function isCollide (enemy, player) {
     return  !(player.left > enemy.right || 
              player.right < enemy.left  || 
              player.top > enemy.bottom  || 
@@ -45,7 +46,7 @@ Enemy.prototype.collision = function(enemy, player) {
 
 
 Enemy.prototype.checkCollisions = function() {
-    if (this.collision(this, player)) {
+    if (isCollide(this, player)) {
         player.reset();
     }
 }
@@ -132,6 +133,8 @@ var enemy3 = new Enemy();
 
 
 var allEnemies = [enemy1,enemy2,enemy3,]
+allEnemies.push = ("enemy");
+
 
 var player = new Player();
 
