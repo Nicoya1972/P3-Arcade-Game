@@ -3,12 +3,13 @@ var Enemy = function() {
     // we've provided one for you to get started
     
    
-    this.speed = 40;
+    this.speed = 50;
     this.x = 0;
     this.y = 230 * Math.random();
     this.isPlacement = [60, 120, 210];
-    this.allEnemies = 10;
     
+    
+
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
@@ -29,6 +30,7 @@ Enemy.prototype.update = function(dt) {
         this.x = -125;
         this.y = this.isPlacement[Math.floor(Math.random() * this.isPlacement.length)];;
         }
+    // enemy bounding box
     this.left = this.x;
     this.top = this.y;
     this.right = this.x + 70;
@@ -49,6 +51,7 @@ Enemy.prototype.checkCollisions = function() {
     if (isCollide(this, player)) {
         player.reset();
     }
+
 }
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
@@ -68,17 +71,15 @@ var Player = function(loc) {
 
 
 Player.prototype.update = function(){
-if (this.y < 0) {
-    player.reset();
-    } 
-
-    this.left = this.x;
-    this.top = this.y;
+  
+    //player bounding box
+    this.left = this.y;
+    this.top = this.x ;
     this.right = this.x + 70;
     this.bottom = this.y + 70;
 
-    
-}
+ }   
+
 
 
 Player.prototype.render = function() {
@@ -92,7 +93,13 @@ Player.prototype.reset = function() {
   this.y = 400;
 }  
 
+Player.prototype.checkCollisions = function() {
+if (thus.y < 0) {
+    player.reset();
+   }
+}
 
+//inputs for player movement
 Player.prototype.handleInput = function(allowedKeys){
   
   if (allowedKeys === 'left') {
@@ -124,17 +131,13 @@ Player.prototype.handleInput = function(allowedKeys){
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-
-
-
 var enemy1 = new Enemy();
 var enemy2 = new Enemy();
 var enemy3 = new Enemy();
 
+var allEnemies = [enemy1,enemy2,enemy3];
 
-var allEnemies = [enemy1,enemy2,enemy3,]
-allEnemies.push = ("enemy");
-
+function enemyCount
 
 var player = new Player();
 
