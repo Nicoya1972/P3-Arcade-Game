@@ -6,7 +6,7 @@ var Enemy = function() {
     this.speed = 50;
     this.x = 0;
     this.y = 230 * Math.random();
-    this.isPlacement = [60, 120, 210];
+    this.enemyLane = [60, 120, 210,];
     
     
 
@@ -28,8 +28,8 @@ Enemy.prototype.update = function(dt) {
 
     if (this.x > 500) {
         this.x = -125;
-        this.y = this.isPlacement[Math.floor(Math.random() * this.isPlacement.length)];;
         }
+
     // enemy bounding box
     this.left = this.x;
     this.top = this.y;
@@ -72,6 +72,7 @@ var Player = function(loc) {
 
 Player.prototype.update = function(){
   
+  
     //player bounding box
     this.left = this.y;
     this.top = this.x ;
@@ -94,9 +95,7 @@ Player.prototype.reset = function() {
 }  
 
 Player.prototype.checkCollisions = function() {
-if (thus.y < 0) {
-    player.reset();
-   }
+this.checkCollisions(Enemy,player);
 }
 
 //inputs for player movement
@@ -109,9 +108,11 @@ Player.prototype.handleInput = function(allowedKeys){
     }
     if (allowedKeys === 'up') {
         if (this.y > 100) {
-            this.y -= 83;                                                                                                                                                                                            
+            this.y -= 83;  
         }
-        
+        else {
+            this.reset();
+        }
     }
     if (allowedKeys === 'right') {
         if (this.x < 350) {
@@ -122,22 +123,34 @@ Player.prototype.handleInput = function(allowedKeys){
         if (this.y < 400) {
             this.y += 83;
         }
+    
     }
+
 }
+ 
 
 
-  
-  
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
-var enemy1 = new Enemy();
-var enemy2 = new Enemy();
-var enemy3 = new Enemy();
 
-var allEnemies = [enemy1,enemy2,enemy3];
 
-function enemyCount
+
+var allEnemies = [];
+
+
+function newEnemies() {
+  var enemy = new Enemy();
+  allEnemies.push(enemy);
+  var enemycount = 4;  
+   
+   if(allEnemies.length === enemycount + 1){
+        allEnemies.shift();
+    }
+}
+
+var enemyInterval = setInterval(newEnemies, 6000);
+
 
 var player = new Player();
 
