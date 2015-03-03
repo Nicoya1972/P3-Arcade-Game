@@ -1,0 +1,17 @@
+//referenced to buld collision between bugs and player.
+
+http://stackoverflow.com/questions/2440377/javascript-collision-detection
+http://blog.sklambert.com/html5-canvas-game-2d-collision-detection/
+https://msdn.microsoft.com/en-us/library/ie/gg589497(v=vs.85).aspx
+
+
+//use to set the interval at which enemies are recycled
+
+http://www.elated.com/articles/javascript-timers-with-settimeout-and-setinterval/
+http://stackoverflow.com/questions/2696692/setinterval-vs-settimeout
+http://www.w3schools.com/js/js_timing.asp
+http://www.w3schools.com/jsref/met_win_setinterval.asp
+
+
+//use to set ramdom placement of bugs.
+http://stackoverflow.com/questions/4550505/getting-random-value-from-an-array
