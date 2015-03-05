@@ -3,3 +3,10 @@ body {
     background-color: #006600;
 }
 
+.id {
+  font-style: italic;
+  font-size: 14px;
+  color: #999999;
+  line-height: 16px;
+  float: left;
+}
