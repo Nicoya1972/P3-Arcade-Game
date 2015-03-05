@@ -15,3 +15,13 @@ http://www.w3schools.com/jsref/met_win_setinterval.asp
 
 //use to set ramdom placement of bugs.
 http://stackoverflow.com/questions/4550505/getting-random-value-from-an-array
+
+
+//Used as reference to write text on Canvas.
+http://stackoverflow.com/questions/3697615/how-can-i-write-text-on-a-html5-canvas-element
+
+Udacity HTML CANVAS
+UDACITY OOJS Course
+
+Book 
+JAVASCRIPT Novice to Ninja   by Darren Jones
