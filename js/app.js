@@ -28,8 +28,8 @@ Enemy.prototype.update = function(dt) {
     // enemy bounding box
     this.left = this.x;
     this.top = this.y;
-    this.right = this.x + 50;
-    this.bottom = this.y + 50;
+    this.right = this.x + 60;
+    this.bottom = this.y + 60;
 
     this.checkCollisions(this, player);
 };
@@ -40,7 +40,6 @@ function isCollide(enemy, player) {
         player.top > enemy.bottom ||
         player.bottom < enemy.top);
 }
-
 
 Enemy.prototype.checkCollisions = function() {
     if (isCollide(this, player)) {
@@ -69,8 +68,8 @@ Player.prototype.update = function() {
     //player bounding box
     this.left = this.y;
     this.top = this.x;
-    this.right = this.x + 50;
-    this.bottom = this.y + 50;
+    this.right = this.x + 60;
+    this.bottom = this.y + 60;
 
 };
 
@@ -132,9 +131,7 @@ function newEnemies() {
 if (allEnemies.length === enemyCount + 1) {
         allEnemies.shift();
     }
-    
-    
-    
+        
 }
 
 function randomNumber(range) {
@@ -142,32 +139,18 @@ function randomNumber(range) {
     return number;
 }
 
-var Gem = function(loc) {
-    //Randomly pick row
-   
-    this.x = 200;
-    this.Y = 0;
-    this.sprite = "images/Gem blue.png"
-}
-
-// Draw the gem on the screen, required method for game
-Gem.prototype.render = function() {
-    //Need to offset the draw coordinates due to scaling down of image
-    //Keeping this.x and this.y untouched to allow for ease of collision detection
-    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
-
 //changes background-color of Body.
 var bodyColor = setInterval(function(){ setColor() }, 4000);
 
 function setColor() {
     var x = document.body;
-    x.style.backgroundColor = x.style.backgroundColor == "blue" ? "gray" : "blue";
+    x.style.backgroundColor = x.style.backgroundColor == "white" ? "gray" : "white";
 }
 
 function stopColor() {
     clearInterval(bodyColor);
 }
+
 
 // This listens for key presses and sends the keys to your
 //  Player.handleInput() method. You don't need to modify this.
