@@ -10,14 +10,12 @@
     <script src="js/app.js"></script>
     <script src="js/engine.js"></script>
     <script type="text/javascript"></script>
-</script>
-<canvas id="e" width="500" height="200"></canvas>
-<script>
-  var canvas = document.getElementById("e");
-  var context = canvas.getContext("2d");
-  context.fillStyle = "black";
-  context.font = "bold 16px Arial";
-  context.fillText("Use arrow keys to move Player", 100, 100);
-</script>
+
+<div id="textDiv"></div>
+<script type="text/javascript">
+    var div = document.getElementById("textDiv");
+    div.textContent = "Use arrow keys to move Player";
+    var text = div.textContent;
+    </script>
 </body>
 </html>
