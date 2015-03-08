@@ -28,8 +28,8 @@ Enemy.prototype.update = function(dt) {
     // enemy bounding box
     this.left = this.x;
     this.top = this.y;
-    this.right = this.x + 60;
-    this.bottom = this.y + 60;
+    this.right = this.x + 50;
+    this.bottom = this.y + 50;
 
     this.checkCollisions(this, player);
 };
@@ -66,10 +66,10 @@ var Player = function(loc) {
 Player.prototype.update = function() {
 
     //player bounding box
-    this.left = this.y;
-    this.top = this.x;
-    this.right = this.x + 60;
-    this.bottom = this.y + 60;
+    this.left = this.x;
+    this.top = this.y;
+    this.right = this.x + 50;
+    this.bottom = this.y + 50;
 
 };
 
